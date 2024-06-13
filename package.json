@@ -106,8 +106,7 @@
         }
       ],
       "@semantic-release/git",
-      "@semantic-release/github",
-      "@semantic-release/conventional-changelog-conventionalcommits"
+      "@semantic-release/github"
     ]
   },
   "volta": {
