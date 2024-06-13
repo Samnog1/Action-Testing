@@ -3,5 +3,107 @@
   "version": "0.1.0",
   "devDependencies": {
     "semantic-release": "^24.0.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "release": "patch"
+            }
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES",
+              "BREAKING"
+            ]
+          }
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "presetConfig": {
+            "types": [
+              {
+                "type": "feat",
+                "section": "Features",
+                "hidden": false
+              },
+              {
+                "type": "fix",
+                "section": "Bug Fixes",
+                "hidden": false
+              },
+              {
+                "type": "chore",
+                "section": "Chores",
+                "hidden": false
+              },
+              {
+                "type": "docs",
+                "section": "Documentation",
+                "hidden": false
+              },
+              {
+                "type": "style",
+                "section": "Styles",
+                "hidden": false
+              },
+              {
+                "type": "refactor",
+                "section": "Refactor",
+                "hidden": false
+              },
+              {
+                "type": "perf",
+                "section": "Performance",
+                "hidden": false
+              }
+            ],
+            "parserOpts": {
+              "noteKeywords": [
+                "BREAKING CHANGE",
+                "BREAKING CHANGES",
+                "BREAKING"
+              ]
+            },
+            "writerOpts": {
+              "commitsSort": [
+                "subject",
+                "scope"
+              ]
+            }
+          }
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "volta": {
+    "node": "20.12.2"
   }
 }
