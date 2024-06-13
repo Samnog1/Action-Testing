@@ -6,6 +6,8 @@ jobs:
   publish-release:
     name: Publish release_name
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
