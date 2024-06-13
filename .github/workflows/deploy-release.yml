@@ -1,0 +1,12 @@
+name: Publish release_name
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-release:
+    name: Publish release_name
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release
+        run: npx semantic-release
