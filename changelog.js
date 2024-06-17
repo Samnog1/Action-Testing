@@ -1,13 +1,21 @@
-"use strict";
+'use strict'
 
-module.exports = {
-  types: [
-    { type: "feat", section: "Features 🎉" },
-    { type: "fix", section: "Bug Fixes 🐛" },
-    { type: "chore", section: "Chores 🧹" },
-    { type: "docs", section: "Documentation 📖" },
-    { type: "perf", section: "Performance ⏱" },
-    { type: "test", section: "Test 🛠" },
-    { type: "revert", section: "Revert" },
-  ],
-};
+async function getConfig() {
+  const config = await import('conventional-changelog-conventionalcommits');
+
+  return config.default({
+    "types": [
+        { type: 'ci', section: 'Continuous Integration ⚙️' },
+        { type: 'chore', section: 'Chores 🧹' },
+        { type: 'docs', section: 'Documentation 📖' },
+        { type: 'feat', section: 'Feature 🎉' },
+        { type: 'fix', section: 'Bug Fix 🐛' },
+        { type: 'perf', section: 'Performance Improvements ⚡' },
+        { type: 'refactor', section: 'Code Refactoring 🔨' },
+        { type: 'style', section: 'Styles 🎨' },
+        { type: 'test', section: 'Tests ✅',  },
+    ]
+  });
+}
+
+module.exports = getConfig;
