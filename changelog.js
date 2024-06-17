@@ -1,11 +1,9 @@
 'use strict'
+const config = require('conventional-changelog-conventionalcommits');
 
-async function getConfig() {
-  const config = await import('conventional-changelog-conventionalcommits');
-
-  return config.default({
-    "types": [
-        { type: 'ci', section: 'Continuous Integration ⚙️' },
+module.exports = config({
+  "types": [
+    { type: 'ci', section: 'Continuous Integration ⚙️' },
         { type: 'chore', section: 'Chores 🧹' },
         { type: 'docs', section: 'Documentation 📖' },
         { type: 'feat', section: 'Feature 🎉' },
@@ -14,8 +12,5 @@ async function getConfig() {
         { type: 'refactor', section: 'Code Refactoring 🔨' },
         { type: 'style', section: 'Styles 🎨' },
         { type: 'test', section: 'Tests ✅',  },
-    ]
-  });
-}
-
-module.exports = getConfig;
+  ],
+});
