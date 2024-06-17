@@ -1,7 +1,6 @@
 "use strict";
-const config = require("conventional-changelog-conventionalcommits");
 
-module.exports = config({
+export default {
   types: [
     { type: "feat", section: "Features" },
     { type: "fix", section: "Bug Fixes" },
@@ -14,4 +13,4 @@ module.exports = config({
     { type: "build", section: "Build System" },
     { type: "ci", section: "Continuous Integration" },
   ],
-});
+};
