@@ -14,7 +14,4 @@ module.exports = config({
     { type: "build", section: "Build System" },
     { type: "ci", section: "Continuous Integration" },
   ],
-  skip: {
-    commit: false,
-  },
 });
