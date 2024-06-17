@@ -14,15 +14,22 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install conventional-changelog-conventionalcommits
+
       - name: Conventional changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pre-release: true
-          preset: "conventionalcommits "
           pre-release-identifier: beta
           skip-commit: true
+          config-file-path: ./changelog.js
 
       - name: Create Pre-release
         uses: actions/create-release@v1
