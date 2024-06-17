@@ -1,16 +1,14 @@
 "use strict";
+const config = require("conventional-changelog-conventionalcommits");
 
-module.exports = {
+module.exports = config({
   types: [
-    { type: "feat", section: "Features" },
-    { type: "fix", section: "Bug Fixes" },
-    { type: "chore", section: "Chores" },
-    { type: "docs", section: "Documentation" },
-    { type: "style", section: "Styles" },
-    { type: "refactor", section: "Code Refactoring" },
-    { type: "perf", section: "Performance Improvements" },
-    { type: "test", section: "Tests" },
-    { type: "build", section: "Build System" },
-    { type: "ci", section: "Continuous Integration" },
+    { type: "feat", section: "Features 🎉" },
+    { type: "fix", section: "Bug Fixes 🐛" },
+    { type: "chore", section: "Chores 🧹" },
+    { type: "docs", section: "Documentation 📖" },
+    { type: "perf", section: "Performance ⏱" },
+    { type: "test", section: "Test 🛠" },
+    { type: "revert", section: "Revert" },
   ],
-};
+});

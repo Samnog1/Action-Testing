@@ -15,6 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js 20.8.1
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.8.1"
+
+      - run: npm install conventional-changelog-conventionalcommits
+
       - name: Conventional changelog
         id: changelog
         uses: TriPSs/conventional-changelog-action@v5
