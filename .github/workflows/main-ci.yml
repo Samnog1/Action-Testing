@@ -22,7 +22,7 @@ jobs:
           pre-release: true
           pre-release-identifier: beta
           skip-commit: true
-          config-file-path: ./../changelog.js
+          config-file-path: ./changelog.js
 
       - name: Create Pre-release
         uses: actions/create-release@v1
