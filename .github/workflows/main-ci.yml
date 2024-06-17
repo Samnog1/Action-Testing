@@ -29,7 +29,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pre-release: true
           skip-commit: true
-          config-file-path: ./changelog.js
+          config-file-path: "./changelog.js"
           skip-tag: true
 
       - name: Create Pre-release
